@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="STM32" />
+		<Option pch_mode="2" />
+		<Option compiler="yaourt_gnu_arm_gcc_compiler" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/STM32" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Debug/" />
+				<Option type="5" />
+				<Option compiler="yaourt_gnu_arm_gcc_compiler" />
+				<Option projectCompilerOptionsRelation="0" />
+				<Option projectLinkerOptionsRelation="0" />
+				<Option projectIncludeDirsRelation="0" />
+				<Option projectResourceIncludeDirsRelation="0" />
+				<Option projectLibDirsRelation="0" />
+				<ExtraCommands>
+					<Add after="arm-none-eabi-objcopy -O ihex bin/Debug/STM32 bin/Debug/stm32.hex" />
+					<Add after="arm-none-eabi-objcopy -O binary bin/Debug/STM32 bin/Debug/stm32.bin" />
+					<Add after="st-flash write bin/Debug/stm32.bin 0x08000000" />
+					<Add after="arm-none-eabi-size bin/Debug/stm32" />
+				</ExtraCommands>
+				<MakeCommands>
+					<Build command="" />
+					<CompileFile command="" />
+					<Clean command="" />
+					<DistClean command="" />
+					<AskRebuildNeeded command="" />
+					<SilentBuild command=" &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/stm32" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="5" />
+				<Option compiler="yaourt_gnu_arm_gcc_compiler" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-mcpu=cortex-m0 -gdwarf-2 -mthumb -mlittle-endian -fomit-frame-pointer -Wall -fdata-sections -ffunction-sections -Wstrict-prototypes -fverbose-asm -Os" />
+			<Add option="-DSTM32F030x8" />
+			<Add directory="/media/Stock/GoogleDrive/Dropbox/Dropbox/STSources/IN010/Inc" />
+			<Add directory="/media/Stock/GoogleDrive/Dropbox/Dropbox/STSources/Drivers/CMSIS/Include" />
+			<Add directory="/media/Stock/GoogleDrive/Dropbox/Dropbox/STSources/Drivers/CMSIS/Device/ST/STM32F0xx/Include" />
+			<Add directory="/media/Stock/GoogleDrive/Dropbox/Dropbox/STSources/Drivers/STM32F0xx_HAL_Driver/Inc" />
+			<Add directory="/media/Stock/GoogleDrive/Dropbox/Dropbox/STSources/Drivers/BSP/STM32F0xx-Nucleo" />
+		</Compiler>
+		<Linker>
+			<Add option="-mthumb -mcpu=cortex-m0  -TSTM32F030R8_FLASH.ld -Wl,-Map=project.map,--cref,--no-warn-mismatch" />
+			<Add option="--specs=nano.specs -nostartfiles -Wl,--gc-sections" />
+			<Add library="../../../../../../../usr/arm-none-eabi/lib/thumb/libm.a" />
+			<Add library="../../../../../../../usr/arm-none-eabi/lib/thumb/libc.a" />
+		</Linker>
+		<Unit filename="../Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc/startup_stm32f030x8.s" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_adc.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_adc_ex.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_can.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cec.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_comp.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_conf_template.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_crc.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_crc_ex.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dac.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dac_ex.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2s.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_irda.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_irda_ex.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_iwdg.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rtc.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rtc_ex.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_smartcard.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_smartcard_ex.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_smbus.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_spi.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tsc.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_usart.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_usart_ex.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_wwdg.h" />
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_can.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cec.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_comp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_crc.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_crc_ex.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dac.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dac_ex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2s.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_irda.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_iwdg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_msp_template.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd_ex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rtc.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rtc_ex.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_smartcard.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_smartcard_ex.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_smbus.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_spi.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tsc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_usart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_wwdg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Inc/main.h" />
+		<Unit filename="Inc/stm32f0xx_hal_conf.h" />
+		<Unit filename="Inc/stm32f0xx_it.h" />
+		<Unit filename="Src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Src/stm32f0xx_hal_msp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Src/stm32f0xx_it.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Src/system_stm32f0xx.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Src/vectors.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<debugger>
+				<remote_debugging>
+					<options conn_type="0" serial_baud="115200" ip_address="localhost" ip_port="3333" additional_cmds="set remote hardware-breakpoint-limit 4&#x0A;set remote hardware-watchpoint-limit 2&#x0A;monitor halt&#x0A;monitor reset&#x0A;load ./bin/Debug/STM32&#x0A;file ./bin/Debug/STM32&#x0A;monitor sleep 1000&#x0A;monitor reset" />
+				</remote_debugging>
+				<remote_debugging target="Debug">
+					<options conn_type="0" serial_baud="115200" ip_address="localhost" ip_port="3333" additional_cmds="monitor halt&#x0A;load ./bin/Debug/STM32&#x0A;file ./bin/Debug/STM32&#x0A;monitor sleep 1000&#x0A;monitor reset" />
+				</remote_debugging>
+			</debugger>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
