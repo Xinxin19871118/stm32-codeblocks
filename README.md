@@ -13,42 +13,42 @@ STM32F0 Discovery. Running this project the two LEDs will blink.
 	    
 4 - Setup gcc-arm:
 
-a)	Go CodeBlocks Menu Settings->Compiler
-	In "Selected Compiler" press button Copy and rename it
-	Select your new compiler in "Selected Compiler"
-	
-	On Tab "Search Directories" add the includes path of your arm-none-eabi-* includes 
+a)	Go to CodeBlocks Menu Settings->Compiler
+In "Selected Compiler" press button Copy and rename it
+Select your new compiler in "Selected Compiler"
+
+On Tab "Search Directories" add the includes path of your arm-none-eabi-* includes 
 installed on "Compiler" and lib path on "Linker"
-	On Tab "ToolChain executables" set the name e path (if necessary) of each executable
+On Tab "ToolChain executables" set the name e path (if necessary) of each executable
 	
-	on my machine (archlinux) 
-	
-	C compiler : arm-none-eabi-gcc
-	C++ compiler: arm-none-eabi-g++
-	Linker for dyn...: arm-none-eabi-g++
-	Linker for static ...: arm-none-eabi-ar
-	Make program: make
+on my machine (archlinux) 
+
+C compiler : arm-none-eabi-gcc
+C++ compiler: arm-none-eabi-g++
+Linker for dyn...: arm-none-eabi-g++
+Linker for static ...: arm-none-eabi-ar
+Make program: make
 
 a-3)	Debugger, you will setup later (don't forget!)
 
 b)   Go Menu Settings->Debugger
 
-	Select GDB/CDB debugger and click "Create Config". Write a name.
-        On new created config fill "Executable path:" with your arm-none-eabi-gdb path 
-        In my machine (archlinux): /usr/bin/arm-none-eabi-gdb
-	Click on "Do *not* run de debugee"
-	Return to previous Compiler setting and select your new Debugger config (a-3)
+Select GDB/CDB debugger and click "Create Config". Write a name.
+On new created config fill "Executable path:" with your arm-none-eabi-gdb path 
+In my machine (archlinux): /usr/bin/arm-none-eabi-gdb
+Click on "Do *not* run de debugee"
+Return to previous Compiler setting and select your new Debugger config (a-3)
 
 6 - Before debugging any code is necessary run OpenOCD from terminal or - the best choice - 
-from a configured Tools in the CB menu
+from a configured Tools in the CB menu. Run openoncd with: 
 
-	Run Openoncd with: openocd -f board/stm32f0discovery.cfg	
+	openocd -f board/stm32f0discovery.cfg	
 
 ## ADD More MCU
 	
-	Download STM32Cube for your MCU.
-	Copy content of Driver folder to Drivers of this template
-	Correct includes path, MCU Define....
+Download STM32Cube for your MCU.
+Copy content of Driver folder to Drivers of this template
+Correct includes path, MCU Define....
 
 
 	
