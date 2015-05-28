@@ -321,10 +321,10 @@
 			<code_completion />
 			<debugger>
 				<remote_debugging>
-					<options conn_type="0" serial_baud="115200" ip_address="localhost" ip_port="3333" additional_cmds="set remote hardware-breakpoint-limit 4&#x0A;set remote hardware-watchpoint-limit 2&#x0A;monitor halt&#x0A;monitor reset&#x0A;load ./bin/Debug/STM32&#x0A;file ./bin/Debug/STM32&#x0A;monitor sleep 1000&#x0A;monitor reset" />
+					<options conn_type="0" serial_baud="115200" ip_address="localhost" ip_port="3333" additional_cmds="set remote hardware-breakpoint-limit 4&#x0A;set remote hardware-watchpoint-limit 2&#x0A;monitor halt&#x0A;monitor reset halt&#x0A;load ./bin/Debug/STM32&#x0A;file ./bin/Debug/STM32&#x0A;monitor sleep 1000&#x0A;monitor reset halt" />
 				</remote_debugging>
 				<remote_debugging target="Debug">
-					<options conn_type="0" serial_baud="115200" ip_address="localhost" ip_port="3333" additional_cmds="monitor halt&#x0A;load ./bin/Debug/STM32&#x0A;file ./bin/Debug/STM32&#x0A;monitor sleep 1000&#x0A;monitor reset" />
+					<options conn_type="0" serial_baud="115200" ip_address="localhost" ip_port="3333" additional_cmds="monitor reset halt&#x0A;load ./bin/Debug/STM32&#x0A;file ./bin/Debug/STM32&#x0A;monitor sleep 1000&#x0A;monitor reset halt" />
 				</remote_debugging>
 			</debugger>
 			<lib_finder disable_auto="1" />
