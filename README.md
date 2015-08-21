@@ -47,7 +47,7 @@ from a configured Tools in the CB menu. Run openoncd with:
 ## ADD More MCU
 	
 Download STM32Cube for your MCU.
-Copy content of Driver folder to Drivers of this template
+Copy content Driver folder to Drivers at template location
 Correct includes path, MCU Define....
 
 
